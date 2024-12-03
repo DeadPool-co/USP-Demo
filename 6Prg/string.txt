@@ -1,0 +1,16 @@
+#!/bin/sh
+
+str=thisisrandomstring
+echo "String: $str"
+
+echo "Length of String"
+length=$(expr "$str" : '.*')
+echo $length
+
+echo "Substring is:"
+substring=$(expr "$str" : '\(....\)')
+echo $substring
+
+echo "Position of character n is:"
+position=$(expr index "$str" n)
+echo $position

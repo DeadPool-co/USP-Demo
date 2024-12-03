@@ -1,0 +1,24 @@
+#!/bin/sh
+
+echo "Enter the string"
+read string
+
+if [ -z "$string" ]; then
+    echo "The string is empty"
+else
+    # Calculate length of the string
+    z=`expr "$string" : '.*'`
+    echo "The length of the string is $z"
+
+    if [ $z -ge 6 ]; then
+        # Extract the first 3 characters
+        echo "The first 3 characters"
+        first_three=`expr "$string" : '\(...\).*'`
+        echo "$first_three"
+
+        # Extract the last 3 characters
+        echo "Last 3 characters"
+        last_three=`expr "$string" : '.*\(...\)'`
+        echo "$last_three"
+    fi
+fi
